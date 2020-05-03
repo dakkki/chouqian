@@ -28,9 +28,9 @@ f = open("user_name.txt", "r")
 id_nums = 1
 for line in f:
     line = line.strip('\n')
-    users.append(User(id=id_nums,username=line, password='123456'))
+    users.append(User(id=id_nums,username=line.split(",")[0], password=line.split(",")[1]))
+    lst_users.append(line.split(",")[0])
     id_nums += 1
-    lst_users.append(line)
 
 # users.append(User(id=1, username='dakki', password='123'))
 # users.append(User(id=2, username='dakki2', password='123'))

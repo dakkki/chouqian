@@ -1,8 +1,8 @@
-chendaoxing
-dakki
-xiaowu
-xiaoxing
-xiaochen
-xiaohua
-zhangshan
-lisi
+chendaoxing,789987
+dakki,654345
+xiaowu,776454
+xiaoxing,456456
+xiaochen,732111
+xiaohua,133211
+zhangshan,723132
+lisi,123132
