@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+    <section class="hero is-success is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            {{g.user.username}} 的抽签
+          </h1>
+          <h2 class="subtitle">
+            <br>
+            每个用户只有一次抽签机会，请务必按照以下流程操作！<br>
+            点击抽签-->点击结束-->记住自己的签号
+          </h2>
+		  <HEAD>
+<style type="text/css">
+body{
+font-size:72px;
+text-align:center;
+}
+input{
+width:350px;
+height:140px;
+font-size:80px;
+}
+</style>
+<TITLE>抽签网页版</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+var names = {{qianhao}};
+
+var name;
+var index = -1;
+var time;
+function begin(){
+document.getElementById("btnBegin").disabled = true;
+chouqian();
+}
+function chouqian(){
+if(names.length > 0){
+index = Math.floor(Math.random()*1000 % names.length);
+name = names[index];
+document.getElementById("result").innerHTML = name;
+
+time = window.setTimeout(chouqian,2);
+}else{
+document.getElementById("result").innerHTML = name;
+}
+}
+function end(){
+name = names[0];  
+document.getElementById("result").innerHTML = name;  
+document.getElementById("btnBegin").disabled = false;
+names.splice(0, {{sum_nums}});
+}
+</SCRIPT>
+</HEAD>
+    <style>
+
+        .button1 {
+
+            -webkit-transition-duration: 0.4s;
+
+            transition-duration: 0.4s;
+
+            padding: 16px 32px;
+
+            text-align: center;
+
+            background-color: white;
+
+            color: #48C774;
+
+            border: 2px solid #4CAF50;
+
+            border-radius:5px;
+
+        }
+
+        .button1:hover {
+
+            background-color: #4CAF50;
+
+            color: white;
+
+        }
+
+    </style>
+			<BODY>
+			<div>
+			<h1 id="result" style="color:white;">^_^</h1>
+			<INPUT class="button1" color="blue" TYPE="button" VALUE="抽签" id="btnBegin" ONCLICK="begin();">
+			<INPUT class="button1" color="blue" TYPE="button" VALUE="结束" id="btnEnd" ONCLICK="end();">
+			</div>
+			</BODY>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
